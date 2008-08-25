@@ -1,0 +1,17 @@
+{application, yamd, [
+  {description, "Yet Another Memcached!!"},
+  {vsn, "%VSN%"},
+  {modules, [yamd_app, yamd_sup,
+             yamd_store_manager, yamd_store,
+             yamd_cleaner,
+             yamd_tcp_acceptor, yamd_tcp_client_sup, yamd_tcp_interface,
+             yamd_argument, yamd_ctl]},
+  {registered, [yamd_sup,
+                yamd_store_manager,
+                yamd_cleaner,
+                yamd_tcp_acceptor, yamd_tcp_client_sup]},
+  {applications, [kernel, stdlib, sasl]},
+  {mod, {yamd_app, []}},
+  {start_phases, []}
+]}.
+
